@@ -19,5 +19,5 @@ bot.on('message', (ctx) => ctx.telegram.sendMessage(
     inlineMessageRatingKeyboard)
 )
 
-telegram.action('like', (ctx) => ctx.editMessageText('You have choosen 1'))
-telegram.action('dislike', (ctx) => ctx.editMessageText('You have choosen 2'))
+bot.action('like', (ctx) => ctx.editMessageText('You have choosen 1'))
+bot.action('dislike', (ctx) => ctx.editMessageText('You have choosen 2'))
