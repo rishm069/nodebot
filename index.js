@@ -9,8 +9,8 @@ bot.hears('hi', (ctx) => ctx.reply('Hey there'))
 bot.launch((ctx) => ctx.reply('Welcome!'))
 
 const inlineMessageRatingKeyboard = Markup.inlineKeyboard([
-    Markup.callbackButton('👍', 'like'),
-    Markup.callbackButton('👎', 'dislike')
+    Markup.callbackButton('This is plain text 1', 'like'),
+    Markup.callbackButton('This is plain text 2', 'dislike')
 ]).extra()
 
 bot.on('message', (ctx) => ctx.telegram.sendMessage(
@@ -18,3 +18,6 @@ bot.on('message', (ctx) => ctx.telegram.sendMessage(
     'Like?',
     inlineMessageRatingKeyboard)
 )
+
+telegram.action('like', (ctx) => ctx.editMessageText('You have choosen 1'))
+telegram.action('dislike', (ctx) => ctx.editMessageText('You have choosen 2'))
